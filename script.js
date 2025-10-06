@@ -46,13 +46,13 @@ function filterFoods () {
 
   if(matches.length = 0){
     render(
-      `<p class="m-0>No foods found starting with '<strong>${letter}</strong>'</p>`
+      `<p class="m-0> No foods found starting with '<strong>${letter}</strong>'</p>`
     )
     return
   }
 
   const list = matches.map(item => `<li class="list-group-item">${item}</li>`).join()
-  render(`<ul class="list-group">${list}</ul>`)
+  render(`<ol class="list-group">${list}</ol>`)
 }
 
 /* 
