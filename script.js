@@ -6,33 +6,53 @@ function render (html) {
   document.getElementById('out').innerHTML = html
 }
 
-/* 
-  1) listFoods()
-     - Use a for...of loop
-     - Output all foods into the #out div (as <p> tags or list items)
-*/
+
 function listFoods () {
-  // code goes here
+ let output = ''
+ for (const food of foods){
+  output += `<p>${food}</p>` 
+ }
+
+
+
+  render(output)
 }
 
-/* 
-  2) numberedFoods()
-     - Use a classic for loop with index
-     - Output foods as an ordered list (<ol><li>...</li></ol>)
-*/
+
 function numberedFoods () {
-  // code goes here
+  let output = `<ol class-"list-group list-group-numbered">`
+
+  for(let i=0; i < foods.length; i++){
+    output += `<li class="list-group-item">${foods[i]}</li>`
+  }
+
+
+  output += `</ol>`
+
+  render(output)
 }
 
-/* 
-  3) filterFoods()
-     - Prompt the user for a letter
-     - Loop through foods
-     - Only show foods that start with that letter
-     - If no matches, display a "not found" message
-*/
+
 function filterFoods () {
-  // code goes here
+  const letter = prompt('choose a letter to filter by:')
+  if (!letter){
+    render(`<p class="text-muted m-0">Enter a REAL number idiot`)
+    return
+  }
+
+  const lower = letter.toLowerCase()
+  const matches = foods.filter(f => f.toLowerCase().startsWith(lower))
+
+
+  if(matches.length = 0){
+    render(
+      `<p class="m-0>No foods found starting with '<strong>${letter}</strong>'</p>`
+    )
+    return
+  }
+
+  const list = matches.map(item => `<li class="list-group-item">${item}</li>`).join()
+  render(`<ul class="list-group">${list}</ul>`)
 }
 
 /* 
