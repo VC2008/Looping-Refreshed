@@ -62,7 +62,38 @@ function filterFoods () {
      - Cards should be placed in a centered row
 */
 function forEachFoods () {
-  // code goes here
+  const array = [foods];
+  array.forEach((foods) =>
+
+    render(
+      `  <div class="row">
+        <div class=" col-lg-3 col-md-6 col-sm-12">
+          <div class="card card-block text-xs-center">
+            <h4 class="card-title"><a href="https://www.njit.edu/academics/degrees#/" class="btn btn-danger btn-block">Learn more</a></h4>
+            <p class="card-text">“.”</p>
+          </div>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-12">
+          <div class="card card-block text-xs-center">
+            <h4 class="card-title"><a href="https://www.njit.edu/academics/degrees#/" class="btn btn-danger btn-block">Learn more</a></h4>
+            <p class="card-text">“.”</p>
+          </div>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-12">
+          <div class="card card-block text-xs-center">
+            <h4 class="card-title"><a href="https://www.njit.edu/academics/degrees#/" class="btn btn-danger btn-block">Learn more</a></h4>
+            <p class="card-text">“."</p>
+          </div>
+        </div>
+        <div class=" col-lg-3 col-md-6 col-sm-12">
+          <div class="card card-block text-xs-center">
+            <h4 class="card-title"><a href="https://www.njit.edu/academics/degrees#/" class="btn btn-danger btn-block">Learn more</a></h4>
+            <p class="card-text">“.”</p>
+          </div>
+        </div>
+      </div>
+      </div>`
+    )
 }
 
 // ---- Event listeners (buttons) ----
@@ -80,8 +111,11 @@ document.getElementById('btnForEach').addEventListener('click', forEachFoods)
   - Display the results as an unordered list (<ul>)
 */
 function uppercaseList () {
-  // TODO: Write your code here
-}
+ let output = ''
+ for (const food of foods){
+  output += `<p>${food}</p>` 
+ }
+
 
 /* 
   Task 2 — Reverse List
